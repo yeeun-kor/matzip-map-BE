@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/places', async (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'places.json');
+  const filePath = path.resolve(new URL(import.meta.url).pathname, '..', 'data', 'places.json');
   const fileContent = await fs.readFile(filePath);
 
   const placesData = JSON.parse(fileContent);
@@ -26,7 +26,7 @@ app.get('/places', async (req, res) => {
 });
 
 app.get('/user-places', async (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'user-places.json');
+  const filePath = path.resolve(new URL(import.meta.url).pathname, '..', 'data', 'user-places.json');
   const fileContent = await fs.readFile(filePath);
 
   const places = JSON.parse(fileContent);
@@ -36,7 +36,7 @@ app.get('/user-places', async (req, res) => {
 
 app.put('/user-places', async (req, res) => {
   const places = req.body.places;
-  const filePath = path.join(__dirname, 'data', 'user-places.json');
+  const filePath = path.resolve(new URL(import.meta.url).pathname, '..', 'data', 'user-places.json');
   await fs.writeFile(filePath, JSON.stringify(places));
 
   res.status(200).json({ message: 'User places updated!' });
