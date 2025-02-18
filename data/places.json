@@ -1,0 +1,112 @@
+[
+  {
+    "id": "r1",
+    "title": "을지로 골목냉면",
+    "image": {
+      "src": "euljiro-naengmyeon.jpg",
+      "alt": "을지로 골목에서 유명한 시원한 냉면."
+    },
+    "lat": 37.5665,
+    "lon": 126.978,
+    "description": "시원한 육수와 쫄깃한 면발로 유명한 을지로 냉면 맛집."
+  },
+  {
+    "id": "r2",
+    "title": "전주 한옥마을 비빔밥",
+    "image": {
+      "src": "jeonju-bibimbap.jpg",
+      "alt": "전주의 대표 음식인 화려한 비빔밥."
+    },
+    "lat": 35.8111,
+    "lon": 127.148,
+    "description": "다양한 재료가 어우러진 전통 비빔밥을 즐길 수 있는 곳."
+  },
+  {
+    "id": "r3",
+    "title": "부산 광안리 해산물집",
+    "image": {
+      "src": "busan-seafood.jpg",
+      "alt": "광안대교가 보이는 해산물 요리."
+    },
+    "lat": 35.1533,
+    "lon": 129.118,
+    "description": "광안리 바다를 바라보며 신선한 해산물을 맛볼 수 있는 맛집."
+  },
+  {
+    "id": "r4",
+    "title": "경주 황리단길 한옥카페",
+    "image": {
+      "src": "gyeongju-hanok-cafe.jpg",
+      "alt": "한옥 스타일의 감성 카페 내부."
+    },
+    "lat": 35.8562,
+    "lon": 129.224,
+    "description": "전통 한옥에서 즐기는 현대적인 디저트와 음료."
+  },
+  {
+    "id": "r5",
+    "title": "서울 마포 돼지갈비",
+    "image": {
+      "src": "seoul-pork-ribs.jpg",
+      "alt": "불판에서 구워지는 돼지갈비."
+    },
+    "lat": 37.5384,
+    "lon": 126.946,
+    "description": "마포에서 유명한 불향 가득한 돼지갈비 맛집."
+  },
+  {
+    "id": "r6",
+    "title": "제주 흑돼지",
+    "image": {
+      "src": "jeju-black-pig.jpg",
+      "alt": "제주의 특산물인 흑돼지 구이."
+    },
+    "lat": 33.4996,
+    "lon": 126.531,
+    "description": "쫄깃하고 풍미가 좋은 제주 흑돼지 요리 전문점."
+  },
+  {
+    "id": "r7",
+    "title": "강릉 초당 순두부",
+    "image": {
+      "src": "gangneung-tofu.jpg",
+      "alt": "고소하고 부드러운 초당 순두부."
+    },
+    "lat": 37.7519,
+    "lon": 128.876,
+    "description": "강릉 초당마을에서 맛보는 고소한 순두부 정식."
+  },
+  {
+    "id": "r8",
+    "title": "대구 동인동 찜갈비",
+    "image": {
+      "src": "daegu-braised-ribs.jpg",
+      "alt": "매콤한 양념이 배어있는 찜갈비."
+    },
+    "lat": 35.8663,
+    "lon": 128.595,
+    "description": "매콤하고 달콤한 맛이 일품인 대구 동인동 찜갈비."
+  },
+  {
+    "id": "r9",
+    "title": "인천 차이나타운 짜장면",
+    "image": {
+      "src": "incheon-jajangmyeon.jpg",
+      "alt": "진한 짜장 소스가 어우러진 짜장면."
+    },
+    "lat": 37.474,
+    "lon": 126.617,
+    "description": "인천 차이나타운에서 만나는 원조 짜장면 맛집."
+  },
+  {
+    "id": "r10",
+    "title": "속초 중앙시장 닭강정",
+    "image": {
+      "src": "sokcho-chicken.jpg",
+      "alt": "겉은 바삭하고 속은 촉촉한 닭강정."
+    },
+    "lat": 38.2062,
+    "lon": 128.591,
+    "description": "달콤하고 매콤한 맛이 조화로운 속초 닭강정."
+  }
+]
