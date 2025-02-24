@@ -1,5 +1,4 @@
 import fs from 'node:fs/promises';
-import path from 'node:path';
 import bodyParser from 'body-parser';
 import express from 'express';
 
@@ -9,37 +8,63 @@ app.use(express.static('images'));
 app.use(bodyParser.json());
 
 // CORS
+
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, PUT');
+  res.setHeader('Access-Control-Allow-Origin', '*'); // allow all domains
+  res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   next();
 });
 
 app.get('/places', async (req, res) => {
-  const filePath = path.resolve(new URL(import.meta.url).pathname, '..', 'data', 'places.json');
-  const fileContent = await fs.readFile(filePath);
+  const fileContent = await fs.readFile('./data/places.json');
 
   const placesData = JSON.parse(fileContent);
 
   res.status(200).json({ places: placesData });
 });
 
-app.get('/user-places', async (req, res) => {
-  const filePath = path.resolve(new URL(import.meta.url).pathname, '..', 'data', 'user-places.json');
-  const fileContent = await fs.readFile(filePath);
+app.get('/users/places', async (req, res) => {
+  const fileContent = await fs.readFile('./data/user-places.json');
 
   const places = JSON.parse(fileContent);
 
   res.status(200).json({ places });
 });
 
-app.put('/user-places', async (req, res) => {
-  const places = req.body.places;
-  const filePath = path.resolve(new URL(import.meta.url).pathname, '..', 'data', 'user-places.json');
-  await fs.writeFile(filePath, JSON.stringify(places));
+app.post('/users/places', async (req, res) => {
+  const newPlace = req.body.place;
 
-  res.status(200).json({ message: 'User places updated!' });
+  const fileContent = await fs.readFile('./data/user-places.json');
+  const userPlaces = JSON.parse(fileContent);
+
+  // Add or update place
+  const existingIndex = userPlaces.findIndex((place) => place.id === newPlace.id);
+  if (existingIndex >= 0) {
+    userPlaces[existingIndex] = newPlace; // Update existing place
+  } else {
+    userPlaces.push(newPlace); // Add new place
+  }
+
+  await fs.writeFile('./data/user-places.json', JSON.stringify(userPlaces));
+
+  res.status(200).json({ message: 'User place added/updated!' });
+});
+
+
+app.delete('/users/places/:id', async (req, res) => {
+  const placeId = req.params.id;
+
+  const fileContent = await fs.readFile('./data/user-places.json');
+  const userPlaces = JSON.parse(fileContent);
+
+  // Remove place by ID
+  const updatedPlaces = userPlaces.filter((place) => place.id !== placeId);
+
+  await fs.writeFile('./data/user-places.json', JSON.stringify(updatedPlaces));
+
+  res.status(200).json({ message: 'User place deleted!' });
 });
 
 // 404
