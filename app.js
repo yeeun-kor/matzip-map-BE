@@ -64,7 +64,7 @@ app.delete('/users/places/:id', async (req, res) => {
 
   await fs.writeFile('./data/user-places.json', JSON.stringify(updatedPlaces));
 
-  res.status(200).json({ message: 'User place deleted!' });
+  res.status(204).send();
 });
 
 // 404
